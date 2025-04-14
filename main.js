@@ -10,7 +10,7 @@ const path = require('path')
 const url = require('url')
 
 /////////////////////////////
-
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 ///////////////////////////////
 // Copy paste fixed by this 
 
@@ -54,8 +54,8 @@ app.on('ready', () => {
         selector: 'selectAll:'
       }]
     }];
-    var osxMenu = Menu.buildFromTemplate(template);
-    Menu.setApplicationMenu(osxMenu);
+    //var osxMenu = Menu.buildFromTemplate(null);
+    //Menu.setApplicationMenu(null);
   }
 })
 
@@ -97,7 +97,14 @@ function createWindow () {
 
   server.run();
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1347, height: 650})
+  mainWindow = new BrowserWindow({
+    minWidth: 1347, 
+    minHeight: 650,
+    autoHideMenuBar: true,
+
+  })
+
+  mainWindow.maximize()
 
   // and load the index.html of the app.
   mainWindow.loadURL('http://'+server.host+':'+server.port+'/')
