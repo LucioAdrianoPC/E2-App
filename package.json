@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron-forge start",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --no-asar --icon=icons/logo.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . electron-tutorial-app --overwrite --no-asar --platform=win32 --arch=ia32 --icon=icons/logo.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
+    "package-win": "electron-packager . e2-app --overwrite --no-asar --platform=win32 --arch=ia32 --icon=icons/e2.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"E2-App\"",
     "package-linux": "electron-packager . electron-tutorial-app --overwrite --no-asar --platform=linux --arch=x64 --icon=icons/logo.png --prune=true --out=release-builds",
     "package": "electron-forge package",
     "make": "electron-forge make"
@@ -25,12 +25,14 @@
     "@electron-forge/maker-dmg": "^7.8.0",
     "@electron-forge/maker-rpm": "^7.8.0",
     "@electron-forge/maker-squirrel": "^7.8.0",
+    "@electron-forge/maker-wix": "^7.8.0",
     "@electron-forge/maker-zip": "^7.8.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.8.0",
     "@electron-forge/plugin-fuses": "^7.8.0",
     "@electron/fuses": "^1.8.0",
     "electron": "^13.1.0",
-    "electron-packager": "^15.2.0"
+    "electron-packager": "^15.2.0",
+    "electron-winstaller": "^5.4.0"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1",

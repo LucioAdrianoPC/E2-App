@@ -4,34 +4,16 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
-    makers: [
-      {
-        name: '@electron-forge/maker-squirrel',
-        config: {
-          certificateFile: './cert.pfx',
-          certificatePassword: process.env.CERTIFICATE_PASSWORD
-        }
-      }
-    ]
   },
   rebuildConfig: {},
   makers: [
     {
-      name: '@electron-forge/maker-squirrel',
-      config: {},
-    },
-    {
-      name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
-    },
-    {
-      name: '@electron-forge/maker-deb',
-      config: {},
-    },
-    {
-      name: '@electron-forge/maker-rpm',
-      config: {},
-    },
+      name: '@electron-forge/maker-wix',
+      config: {
+        language: 1033,
+        manufacturer: 'APP E2 Serviços'
+      }
+    }
   ],
   plugins: [
     {
